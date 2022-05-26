@@ -33,6 +33,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -46,13 +47,13 @@ public final class SelectionQuery extends AbstractSQLQuery<ResultSet> {
 
     public SelectionQuery(Identifier tableIdentifier) {
         super(tableIdentifier);
-        setSelections(null);
+        setSelections((List<Selectable>) null);
         setFilter(null);
     }
 
     public SelectionQuery(String tableName) {
         super(tableName);
-        setSelections(null);
+        setSelections((List<Selectable>) null);
         setFilter(null);
     }
 
@@ -62,6 +63,10 @@ public final class SelectionQuery extends AbstractSQLQuery<ResultSet> {
 
     public void setSelections(List<Selectable> selections) {
         this.selections = selections;
+    }
+
+    public void setSelections(Selectable... selections) {
+        this.selections = Arrays.asList(selections);
     }
 
     public Expression getFilter() {
