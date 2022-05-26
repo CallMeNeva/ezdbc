@@ -32,7 +32,6 @@
         <junit.version>5.8.2</junit.version>
         <assertj.version>3.22.0</assertj.version>
         <guava.version>31.1-jre</guava.version>
-        <mysql-driver.version>8.0.29</mysql-driver.version> <!--- TODO: TESTING PURPOSES ONLY: REMOVE ON RELEASE -->
 
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
@@ -45,12 +44,6 @@
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
             <version>${guava.version}</version>
-        </dependency>
-        <dependency> <!--- TODO: TESTING PURPOSES ONLY: REMOVE ON RELEASE -->
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-driver.version}</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
